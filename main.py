@@ -1,9 +1,13 @@
 import pygame
+import random
 #creating game using python
 
 pygame.init()
 
 screen = pygame.display.set_mode((800,600))
+
+#background
+background = pygame.image.load("background.jpg")
 
 
 #player
@@ -15,6 +19,14 @@ playerX_change = 0
 def player(x,y):
     screen.blit(playerImg,(x,y))
 
+#creating enemy
+enemyImg = pygame.image.load('game.png')
+enemyX = random.randint(0,800)
+enemyY = random.randint(50,150)
+enemyX_change = 0.3
+enemyY_change = 40
+def enemy(x,y):
+    screen.blit(enemyImg,(x,y))
 
 #game loop
 
@@ -28,8 +40,7 @@ pygame.display.set_icon(icon)
 running = True
 while running:
     #RGB = red green blue
-
-    screen.fill((0,0,0))
+    screen.blit(background,(0,0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -52,10 +63,32 @@ while running:
                 playerX_change = 0     
 
     player(playerX,playerY)
+    enemy(enemyX,enemyY)
+
+    #checking boundaries of player
     playerX += playerX_change
+
+    if playerX <= 0:
+        playerX = 0
+    elif playerX >= 736:
+        playerX = 736
+#movement of enemy
+
+    enemyX += enemyX_change
+    if enemyX <= 0:
+        enemyX_change = 0.3
+        enemyY += enemyY_change
+    elif enemyX >= 736:
+        enemyX_change = -0.3
+        enemyY += enemyY_change 
     pygame.display.update()
             
 
 #movement and mechanics in game
 
-#49 min on 
+#1 : 12 min on
+
+#movementof enemy
+
+#creating bullets for shooting
+
