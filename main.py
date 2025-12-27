@@ -39,6 +39,8 @@ bulletY_change = -0.5
 bullet_state = "ready"
 
 def fire_bullet(x,y):
+    global bullet_state
+    bullet_state = "fire"
     screen.blit(bulletImg,(x+16,y+10))
 
 
@@ -110,12 +112,5 @@ while running:
     pygame.display.update()
             
 
-#movement and mechanics in game
-
-#1 : 12 min on
-
-#movementof enemy
-
-#creating bullets for shooting
 
 
