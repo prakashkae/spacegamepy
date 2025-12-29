@@ -1,5 +1,6 @@
 import pygame
 import random
+import math
 #creating game using python
 
 pygame.init()
@@ -21,12 +22,24 @@ def player(x,y):
 
 #creating enemy
 enemyImg = pygame.image.load('game.png')
-enemyX = random.randint(0,800)
+enemyX = random.randint(0,735)
 enemyY = random.randint(50,150)
 enemyX_change = 0.3
 enemyY_change = 40
 def enemy(x,y):
     screen.blit(enemyImg,(x,y))
+
+
+#fucntion for bullet collision 
+def isCollision(enemyX,enemyY,bulletX,bulletY):
+    distance =  math.sqrt(math.pow(enemyX-bulletX,2) + math.pow(enemyY-bulletY,2))
+    if distance <27:
+        return True
+    else:
+        return False
+
+
+
 
 #game loop
 
@@ -49,6 +62,7 @@ pygame.display.set_caption("space invader")
 icon = pygame.image.load('rocket-icon.png')
 pygame.display.set_icon(icon)
 
+Score = 0
 running = True
 while running:
     #RGB = red green blue
@@ -71,6 +85,8 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
+                    #get the current x cordinate of the spaceship
+
                     bulletX = playerX
                     bullet_state = "fire"
 
@@ -103,7 +119,19 @@ while running:
     if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
         bulletY += bulletY_change
-    
+    #collision 
+
+    collision = isCollision(enemyX,enemyY,bulletX,bulletY)
+    if collision:
+        bulletY = 480
+        bullet_state = "ready"
+        Score += 1
+        print(Score)
+        enemyX = random.randint(0,735)
+        enemyY = random.randint(50,150)
+        
+
+
     # Reset bullet when it goes off screen
     if bulletY <= 0:
         bulletY = 480
