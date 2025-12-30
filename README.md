@@ -68,7 +68,7 @@ Controls
 
 ❎ ESC / Close Window — Quit
 
-(Update controls above to match your actual code)
+
 
 📦 Requirements
 
@@ -80,15 +80,7 @@ Pygame (or other game library your code uses)
 
 You can install everything from a requirements.txt file if you choose to add one.
 
-📸 Screenshots
 
-If you want to show how the game looks, add image previews like:
-
-![Gameplay](game.png)
-![Player ship](rocket-icon.png)
-
-
-(Replace file names with your actual screenshots.)
 
 📜 License
 
