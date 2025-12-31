@@ -1,9 +1,9 @@
-🚀 spacegamepy
+ spacegamepy
 
 Python Space Invaders-style game built with a game library (likely Pygame).
 A fun beginner game project in Python featuring shooting, enemies, and sound effects.
 
-🧠 About
+About
 
 This is a simple Space Invader game created using Python.
 It includes graphics and sound assets (images and .wav files) and demonstrates basic game programming concepts like:
@@ -20,9 +20,9 @@ Sound effects
 
 Basic game loop
 
-🎮 Perfect for learning Python game development!
+Perfect for learning Python game development!
 
-📦 Features
+Features
 
 ✔ Player spaceship with movement and shooting
 ✔ Enemy sprites (space invaders)
@@ -30,14 +30,14 @@ Basic game loop
 ✔ Sound effects (laser, explosion, background, etc.)
 ✔ Easy to run and extend
 
-📁 Repository Contents
+Repository Contents
 File / Folder	Purpose
 main.py	Main game script
 *.png	Sprite / image assets
 *.wav	Sound effects
 LICENSE	MIT License
 README.md	This file
-🛠 Installation
+Installation
 
 Clone the repo
 
@@ -52,9 +52,9 @@ If you're using Pygame (most likely):
 pip install pygame
 
 
-If your game uses a different library (e.g., arcade), replace pygame above with the correct requirement.
+If your game uses a different library, replace pygame above with the correct requirement.
 
-▶ How to Play
+How to Play
 
 Run the game with:
 
@@ -62,15 +62,15 @@ python main.py
 
 Controls
 
-🎮 Arrow keys / WASD — Move player ship
+Arrow keys / WASD — Move player ship
 
-🔫 Space — Shoot
+Space — Shoot
 
-❎ ESC / Close Window — Quit
+ESC / Close Window — Quit
 
 
 
-📦 Requirements
+Requirements
 
 This project was developed with:
 
@@ -82,15 +82,3 @@ You can install everything from a requirements.txt file if you choose to add one
 
 
 
-📜 License
-
-This project is licensed under the MIT License
-(see LICENSE file for details).
-
-🙌 Contributions
-
-If you want to improve this game (adding levels, scoring, menu screens, polish), feel free to fork and submit a pull request!
-
-⭐ Support
-
-If this project helped you learn Python or games, leave a ⭐ on the repo!
